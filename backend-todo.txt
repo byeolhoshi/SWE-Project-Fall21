@@ -1,0 +1,4 @@
+11/30/21 
+-> Clean and Optimize index.js
+-> Fix broken firebase hosting error (returns GET error when I use firebase hosting) [firebase serve --only hosting]
+-> Get code from tutorial that integrates auth js to html
