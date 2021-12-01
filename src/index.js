@@ -5,21 +5,7 @@
  I'm keeping a lot of this here until I have more time to go through and see what's dependent on one another.
  Code from this tutorial: https://firebase.google.com/codelabs/firebase-web
  */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
  'use strict';
 
  import { initializeApp } from 'firebase/app';
@@ -49,7 +35,6 @@
    uploadBytesResumable,
    getDownloadURL,
  } from 'firebase/storage';
- import { getMessaging, getToken, onMessage } from 'firebase/messaging';
  import { getPerformance } from 'firebase/performance';
  
  import { getFirebaseConfig } from './firebase-config.js';
@@ -88,69 +73,11 @@
    return !!getAuth().currentUser;
  }
  
- // Saves a new message on the Cloud Firestore.
- async function saveMessage(messageText) {
-   // TODO 7: Push a new message to Cloud Firestore.
- }
- 
- // Loads chat messages history and listens for upcoming ones.
- function loadMessages() {
-   // TODO 8: Load and listen for new messages.
- }
- 
- // Saves a new message containing an image in Firebase.
- // This first saves the image in Firebase storage.
- async function saveImageMessage(file) {
-   // TODO 9: Posts a new image as a message.
- }
- 
- // Saves the messaging device token to Cloud Firestore.
- async function saveMessagingDeviceToken() {
-   // TODO 10: Save the device token in Cloud Firestore
- }
- 
  // Requests permissions to show notifications.
  async function requestNotificationsPermissions() {
    // TODO 11: Request permissions to send notifications.
  }
  
- // Triggered when a file is selected via the media picker.
- function onMediaFileSelected(event) {
-   event.preventDefault();
-   var file = event.target.files[0];
- 
-   // Clear the selection in the file picker input.
-   imageFormElement.reset();
- 
-   // Check if the file is an image.
-   if (!file.type.match('image.*')) {
-     var data = {
-       message: 'You can only share images',
-       timeout: 2000,
-     };
-     signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
-     return;
-   }
-   // Check if the user is signed-in
-   if (checkSignedInWithMessage()) {
-     saveImageMessage(file);
-   }
- }
- 
- // Triggered when the send new message form is submitted.
- function onMessageFormSubmit(e) {
-   e.preventDefault();
-   // Check that the user entered a message and is signed in.
-   if (messageInputElement.value && checkSignedInWithMessage()) {
-     saveMessage(messageInputElement.value).then(function () {
-       // Clear message text field and re-enable the SEND button.
-       resetMaterialTextfield(messageInputElement);
-       toggleButton();
-     });
-   }
- }
- 
- // Triggers when the auth state change for instance when the user signs-in or signs-out.
  function authStateObserver(user) {
    if (user) {
      // User is signed in!
@@ -353,7 +280,6 @@
  mediaCaptureElement.addEventListener('change', onMediaFileSelected);
   */
  const firebaseAppConfig = getFirebaseConfig();
- // TODO 0: Initialize Firebase
  
  // TODO 12: Initialize Firebase Performance Monitoring
  
