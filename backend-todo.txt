@@ -1,0 +1,7 @@
+11/30/21 
+-> Clean and Optimize index.js (fixed)
+-> Fix broken firebase hosting error (returns GET error when I use firebase hosting) [firebase serve --only hosting] (fixed)
+-> Get code from tutorial that integrates auth js to html (different ticket)
+
+12/1/21
+-> above has been fixed
