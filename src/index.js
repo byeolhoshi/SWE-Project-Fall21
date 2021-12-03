@@ -25,6 +25,41 @@
    signInWithPopup,
    signOut,
  } from 'firebase/auth';
+ import {
+   getFirestore,
+   collection,
+   addDoc,
+   query,
+   orderBy,
+   limit,
+   onSnapshot,
+   setDoc,
+   updateDoc,
+   doc,
+   serverTimestamp,
+ } from 'firebase/firestore';
+/*  import {
+   getStorage,
+   ref,
+   uploadBytesResumable,
+   getDownloadURL,
+ } from 'firebase/storage'; */
+
+ ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/" element={<NewUserProfile />} />
+        <Route path="/returnUserProfile" element={<ReturningUserProfile />} />
+      </Routes>
+  </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+ import { getPerformance } from 'firebase/performance';
+ 
  import { getFirebaseConfig } from './firebase-config.js';
  import SignIn from './signin';
  
@@ -100,6 +135,18 @@
  // A loading image URL.
  var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
  
+ 
+ // A loading image URL.
+ var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
+ 
+ /* function toggleButton() {
+   if (messageInputElement.value) {
+     submitButtonElement.removeAttribute('disabled');
+   } else {
+     submitButtonElement.setAttribute('disabled', 'true');
+   }
+ }
+ 
  // Shortcuts to DOM Elements.
 /*  var messageListElement = document.getElementById('messages');
  var messageFormElement = document.getElementById('message-form');
@@ -113,6 +160,7 @@
  var signInButtonElement = document.getElementById('sign-in');
  var signOutButtonElement = document.getElementById('sign-out');
  var signInSnackbarElement = document.getElementById('must-signin-snackbar');
+*/
  const firebaseAppConfig = getFirebaseConfig();
  
  if (isUserSignedIn()){
@@ -149,3 +197,4 @@
  initFirebaseAuth();
  loadMessages();
  initFirebaseAuth();
+ reportWebVitals();
