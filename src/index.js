@@ -1,12 +1,16 @@
 /**
- OIIIIII!! [11/30/21]
- This doc is a WIP! I took this from a tutorial, so we don't need [Emphasis on DONT NEED] a lot of the stuff here!
- This sets up the google authentication
- I'm keeping a lot of this here until I have more time to go through and see what's dependent on one another.
  Code from this tutorial: https://firebase.google.com/codelabs/firebase-web
  */
 
  'use strict';
+ import React from 'react';
+  import ReactDOM from 'react-dom';
+  import './index.css';
+  import reportWebVitals from './reportWebVitals';
+  import ReturningUserProfile from './ReturningUserProfile';
+  import NewUserProfile from './NewUserProfile';
+  import { BrowserRouter, Routes, Route } from 'react-router-dom';
+  import HomePage from './HomePage';
 
  import { initializeApp } from 'firebase/app';
  import {
@@ -29,12 +33,26 @@
    doc,
    serverTimestamp,
  } from 'firebase/firestore';
- import {
+/*  import {
    getStorage,
    ref,
    uploadBytesResumable,
    getDownloadURL,
- } from 'firebase/storage';
+ } from 'firebase/storage'; */
+
+ ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/" element={<NewUserProfile />} />
+        <Route path="/returnUserProfile" element={<ReturningUserProfile />} />
+      </Routes>
+  </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
  import { getPerformance } from 'firebase/performance';
  
  import { getFirebaseConfig } from './firebase-config.js';
@@ -113,134 +131,10 @@
  }
  
  // Returns true if user is signed-in. Otherwise false and displays a message.
-/*  function checkSignedInWithMessage() {
-   // Return true if the user is signed in Firebase
-   if (isUserSignedIn()) {
-     return true;
-   }
- 
-   // Display a message to the user using a Toast.
-   var data = {
-     message: 'You must sign-in first',
-     timeout: 2000,
-   };
-   signInSnackbarElement.MaterialSnackbar.showSnackbar(data);
-   return false;
- }
- 
- // Resets the given MaterialTextField.
- function resetMaterialTextfield(element) {
-   element.value = '';
-   element.parentNode.MaterialTextfield.boundUpdateClassesHandler();
- } */
- 
- // Template for messages.
- /* var MESSAGE_TEMPLATE =
-   '<div class="message-container">' +
-   '<div class="spacing"><div class="pic"></div></div>' +
-   '<div class="message"></div>' +
-   '<div class="name"></div>' +
-   '</div>';
-  */
- // Adds a size to Google Profile pics URLs.
- /* function addSizeToGoogleProfilePic(url) {
-   if (url.indexOf('googleusercontent.com') !== -1 && url.indexOf('?') === -1) {
-     return url + '?sz=150';
-   }
-   return url;
- } */
  
  // A loading image URL.
  var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
  
- // Delete a Message from the UI.
- /* function deleteMessage(id) {
-   var div = document.getElementById(id);
-   // If an element for that message exists we delete it.
-   if (div) {
-     div.parentNode.removeChild(div);
-   }
- } */
- 
- /* function createAndInsertMessage(id, timestamp) {
-   const container = document.createElement('div');
-   container.innerHTML = MESSAGE_TEMPLATE;
-   const div = container.firstChild;
-   div.setAttribute('id', id);
- 
-   // If timestamp is null, assume we've gotten a brand new message.
-   // https://stackoverflow.com/a/47781432/4816918
-   timestamp = timestamp ? timestamp.toMillis() : Date.now();
-   div.setAttribute('timestamp', timestamp);
- 
-   // figure out where to insert new message
-   const existingMessages = messageListElement.children;
-   if (existingMessages.length === 0) {
-     messageListElement.appendChild(div);
-   } else {
-     let messageListNode = existingMessages[0];
- 
-     while (messageListNode) {
-       const messageListNodeTime = messageListNode.getAttribute('timestamp');
- 
-       if (!messageListNodeTime) {
-         throw new Error(
-           `Child ${messageListNode.id} has no 'timestamp' attribute`
-         );
-       }
- 
-       if (messageListNodeTime > timestamp) {
-         break;
-       }
- 
-       messageListNode = messageListNode.nextSibling;
-     }
- 
-     messageListElement.insertBefore(div, messageListNode);
-   }
- 
-   return div;
- } */
- 
- // Displays a Message in the UI.
- /* function displayMessage(id, timestamp, name, text, picUrl, imageUrl) {
-   var div =
-     document.getElementById(id) || createAndInsertMessage(id, timestamp);
- 
-   // profile picture
-   if (picUrl) {
-     div.querySelector('.pic').style.backgroundImage =
-       'url(' + addSizeToGoogleProfilePic(picUrl) + ')';
-   }
- 
-   div.querySelector('.name').textContent = name;
-   var messageElement = div.querySelector('.message');
- 
-   if (text) {
-     // If the message is text.
-     messageElement.textContent = text;
-     // Replace all line breaks by <br>.
-     messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
-   } else if (imageUrl) {
-     // If the message is an image.
-     var image = document.createElement('img');
-     image.addEventListener('load', function () {
-       messageListElement.scrollTop = messageListElement.scrollHeight;
-     });
-     image.src = imageUrl + '&' + new Date().getTime();
-     messageElement.innerHTML = '';
-     messageElement.appendChild(image);
-   }
-   // Show the card fading-in and scroll to view the new message.
-   setTimeout(function () {
-     div.classList.add('visible');
-   }, 1);
-   messageListElement.scrollTop = messageListElement.scrollHeight;
-   messageInputElement.focus();
- } */
- 
- // Enables or disables the submit button depending on the values of the input
- // fields.
  /* function toggleButton() {
    if (messageInputElement.value) {
      submitButtonElement.removeAttribute('disabled');
@@ -262,28 +156,11 @@
  var signInButtonElement = document.getElementById('sign-in');
  var signOutButtonElement = document.getElementById('sign-out');
  var signInSnackbarElement = document.getElementById('must-signin-snackbar');
- 
- // Saves message on form submit.
- messageFormElement.addEventListener('submit', onMessageFormSubmit);
- signOutButtonElement.addEventListener('click', signOutUser);
- signInButtonElement.addEventListener('click', signIn);
- 
- // Toggle for the button.
- messageInputElement.addEventListener('keyup', toggleButton);
- messageInputElement.addEventListener('change', toggleButton);
- 
- // Events for image upload.
- imageButtonElement.addEventListener('click', function (e) {
-   e.preventDefault();
-   mediaCaptureElement.click();
- });
- mediaCaptureElement.addEventListener('change', onMediaFileSelected);
-  */
+*/
  const firebaseAppConfig = getFirebaseConfig();
  
  // TODO 12: Initialize Firebase Performance Monitoring
- 
+ getPerformance();
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
- loadMessages();
- 
+ reportWebVitals();

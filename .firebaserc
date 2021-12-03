@@ -1,6 +1,8 @@
 {
   "projects": {
-    "mth-build": "meet-the-he"
+    "mth-build": "meet-the-he",
+    "staging": "meet-the-he",
+    "default": "meet-the-he"
   },
   "targets": {}
 }
