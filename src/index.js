@@ -21,7 +21,7 @@
    signInWithPopup,
    signOut,
  } from 'firebase/auth';
- import {
+/*  import {
    getFirestore,
    collection,
    addDoc,
@@ -143,6 +143,9 @@
    }
  }
  
+ // A loading image URL.
+ var LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif?a';
+ 
  // Shortcuts to DOM Elements.
 /*  var messageListElement = document.getElementById('messages');
  var messageFormElement = document.getElementById('message-form');
@@ -156,7 +159,7 @@
  var signInButtonElement = document.getElementById('sign-in');
  var signOutButtonElement = document.getElementById('sign-out');
  var signInSnackbarElement = document.getElementById('must-signin-snackbar');
-*/
+
  const firebaseAppConfig = getFirebaseConfig();
  
  if (isUserSignedIn()){
@@ -193,6 +196,30 @@
  getPerformance();
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
+<<<<<<< HEAD
  loadMessages();
  initFirebaseAuth();
  reportWebVitals();
+=======
+ reportWebVitals();
+ 
+ const firebaseAppConfig = getFirebaseConfig();
+ 
+ // TODO 12: Initialize Firebase Performance Monitoring
+ ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/" element={<NewUserProfile />} />
+        <Route path="/returnUserProfile" element={<ReturningUserProfile />} />
+      </Routes>
+  </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+ reportWebVitals();
+ initializeApp(firebaseAppConfig);
+ initFirebaseAuth();
+ loadMessages();
+>>>>>>> 3bc285f (23 Fixed index.js)
