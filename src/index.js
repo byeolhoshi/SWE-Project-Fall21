@@ -1,8 +1,4 @@
 /**
- OIIIIII!! [11/30/21]
- This doc is a WIP! I took this from a tutorial, so we don't need [Emphasis on DONT NEED] a lot of the stuff here!
- This sets up the google authentication
- I'm keeping a lot of this here until I have more time to go through and see what's dependent on one another.
  Code from this tutorial: https://firebase.google.com/codelabs/firebase-web
  */
 
@@ -164,7 +160,7 @@
  const firebaseAppConfig = getFirebaseConfig();
  
  // TODO 12: Initialize Firebase Performance Monitoring
- 
+ getPerformance();
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
  reportWebVitals();
