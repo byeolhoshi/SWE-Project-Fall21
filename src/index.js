@@ -113,7 +113,6 @@
  var signInButtonElement = document.getElementById('sign-in');
  var signOutButtonElement = document.getElementById('sign-out');
  var signInSnackbarElement = document.getElementById('must-signin-snackbar');
- 
  const firebaseAppConfig = getFirebaseConfig();
  
  if (isUserSignedIn()){
@@ -149,3 +148,4 @@
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
  loadMessages();
+ initFirebaseAuth();
