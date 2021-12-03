@@ -262,28 +262,10 @@
  var signInButtonElement = document.getElementById('sign-in');
  var signOutButtonElement = document.getElementById('sign-out');
  var signInSnackbarElement = document.getElementById('must-signin-snackbar');
- 
- // Saves message on form submit.
- messageFormElement.addEventListener('submit', onMessageFormSubmit);
- signOutButtonElement.addEventListener('click', signOutUser);
- signInButtonElement.addEventListener('click', signIn);
- 
- // Toggle for the button.
- messageInputElement.addEventListener('keyup', toggleButton);
- messageInputElement.addEventListener('change', toggleButton);
- 
- // Events for image upload.
- imageButtonElement.addEventListener('click', function (e) {
-   e.preventDefault();
-   mediaCaptureElement.click();
- });
- mediaCaptureElement.addEventListener('change', onMediaFileSelected);
-  */
+
  const firebaseAppConfig = getFirebaseConfig();
  
  // TODO 12: Initialize Firebase Performance Monitoring
  
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
- loadMessages();
- 
