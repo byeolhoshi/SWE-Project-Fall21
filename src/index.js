@@ -159,7 +159,6 @@
 */
  const firebaseAppConfig = getFirebaseConfig();
  
-<<<<<<< HEAD
  if (isUserSignedIn()){
    return (
      ReactDOM.render(
@@ -190,10 +189,8 @@
  }
  
  reportWebVitals();
-=======
  // TODO 12: Initialize Firebase Performance Monitoring
  getPerformance();
->>>>>>> aa1de11 (22-Performance management)
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
  loadMessages();
