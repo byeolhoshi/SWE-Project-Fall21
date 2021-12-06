@@ -4,6 +4,7 @@
 		<title>Bison: Meet The Herd</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 
+	</head>
 	<body>
 		<div class="loginbox">
 			<h1>Login</h1>
@@ -13,10 +14,15 @@
 				<p>Password</p>
 				<input type="text" name="" placeholder="Enter Password">
 				<input type="submit" name="" value="Login">
-				<br><br><a href="#">Login with Google -></a><br>
-				<a href="#">Create a new account -></a>
+				<div id="google-signin"> 
+					<button id="google" onclick="SignIn">Login with Google -></button>
+				</div>
+				<button id="createnew">Create a new account -></button>
 			</form>
 		</div>
+		<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+		<script src="./src/signin.jsx"></script>
 	</body>
-	</head>
+	
 </html>

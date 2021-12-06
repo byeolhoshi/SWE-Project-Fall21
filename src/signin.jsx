@@ -20,3 +20,5 @@ const SignIn =()=>{
 }
 
 export default SignIn
+const domContainer = document.querySelector('#google-signin');
+ReactDOM.render(e(SignIn), domContainer);
