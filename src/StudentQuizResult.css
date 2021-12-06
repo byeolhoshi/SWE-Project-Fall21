@@ -1,0 +1,103 @@
+.Backcolor{
+    background-color: #d6e3f8;
+}
+
+.Alert{
+    font-size: 30px;
+    border: #d6e3f8;
+    padding-top: 40px;
+}
+
+.Header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: #d6e3f8;
+    padding-bottom: 10px;
+  }
+
+.Student-Text{
+    font-size: 20px;
+    text-align: center;
+}
+  
+.Org-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEF5EF;
+    margin-left: 28%;
+    margin-right: 28%;
+    line-height: 10px;
+    border: #FEF5EF;
+    padding: 20px;
+}
+
+.Org-message{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEF5EF;
+    margin-left: 28%;
+    margin-right: 28%;
+    border: #FEF5EF;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.Org-padding{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEF5EF;
+    margin-left: 18%;
+    margin-right: 18%;
+    border: #FEF5EF;
+    padding: 10px;
+}
+  
+.Org-links{
+    line-height: normal;
+}
+  
+.Text-link{
+    font-size: 20px;
+}
+
+.Right-outer-button{
+    margin-left: 25%;
+    color: #D6E3F8;
+    border: #274060;
+    border-width: 1px;
+    padding: 2%;
+    white-space: nowrap;
+}
+  
+.Outer-button{
+    display: flex;
+    margin-left: 70%;
+    color: #D6E3F8;
+    border: #274060;
+    border-width: 1px;
+    padding: 2%;
+    white-space: nowrap;
+}
+  
+.Inner-button{
+    background-color: #FEF5EF;
+}
+  
+  
+.Align-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: white;
+    padding-right: 30%;
+    padding-left: 20%;
+}
+  
