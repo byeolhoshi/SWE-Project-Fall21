@@ -16,7 +16,7 @@ function ReturningUserProfile() {
                 </div>
                 <Link to="/newUserProfile">
                         <div className="Inner-button">
-                            <h4 className= "Text">Fill Form</h4>
+                            <h4 className= "Text">Update Profile</h4>
                         </div>
                     </Link>
             </div>
