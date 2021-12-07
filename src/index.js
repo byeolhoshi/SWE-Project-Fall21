@@ -5,10 +5,12 @@
  'use strict';
  import React from 'react';
   import ReactDOM from 'react-dom';
-  import './index.css';
+  //import './index.css';
   import reportWebVitals from './reportWebVitals';
   import ReturningUserProfile from './ReturningUserProfile';
   import NewUserProfile from './NewUserProfile';
+  import OrgQuizResult from './OrgQuizResult';
+  import StudentQuizResult from './StudentQuizResult';
   import { BrowserRouter, Routes, Route } from 'react-router-dom';
   import HomePage from './HomePage';
 
@@ -44,9 +46,12 @@
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/homepage" element={<HomePage />} />
-        <Route path="/" element={<NewUserProfile />} />
+      <Route path="/homepage" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/returnUserProfile" element={<ReturningUserProfile />} />
+        <Route path="/newUserProfile" element={<NewUserProfile />} />
+        <Route path="/studentQuizResult" element={<StudentQuizResult />} />
+        <Route path="/orgQuizResult" element={<OrgQuizResult />} />
       </Routes>
   </BrowserRouter>
   </React.StrictMode>,

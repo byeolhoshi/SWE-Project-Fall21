@@ -8,13 +8,20 @@ function ReturningUserProfile() {
             <div className= "Header">
                 <h1 className= "Title">Profile</h1>
             </div>
-            <div className= "User-info">
-                <h2 className= "Subtitle">Welcome back John Doe!</h2>
-                <h3 className= "Text">Classification: Junior, Computer Science major</h3>
-                <h3 className= "Text">Club match: ACM</h3>
+            <div className="Align-buttons">
+                <div className= "User-info">
+                    <h2 className= "Subtitle">Welcome back John Doe!</h2>
+                    <h3 className= "Text">Classification: Junior, Computer Science major</h3>
+                    <h3 className= "Text">Club match: ACM</h3>
+                </div>
+                <Link to="/newUserProfile">
+                        <div className="Inner-button">
+                            <h4 className= "Text">Fill Form</h4>
+                        </div>
+                    </Link>
             </div>
             <div className= "Org-info">
-                <img src={ACM}/> <h3 className= "Text">Association of Computing Machinery, Howard Chapter</h3> 
+                <img src={ACM} alt=""/> <h3 className= "Text">Association of Computing Machinery, Howard Chapter</h3> 
                 <h3 className= "Text">Contact Information:</h3>
                 <h3 className= "Text-link">acm@scs.howard.edu</h3>
                 <h3><a

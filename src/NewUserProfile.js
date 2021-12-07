@@ -1,7 +1,12 @@
 import './UserProfile.css';
 import {Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function NewUserProfile() {
+    const [data, setData] = useState(null)
+    function getData(val){
+        setData(val.target.value)
+    }
     return (
         <div className= "Background">
             <div className= "Header">
@@ -9,33 +14,30 @@ function NewUserProfile() {
             </div>
 
             <div className="Form" >
-                <p>Name: </p>
-                <div className="Form-field"></div>
                 <p>Major: </p>
-                <div className="Form-field"></div>
+                <input type="text" onChange={getData} />
                 <p>Classification (Freshman, Sophomore, Junior, Senior): </p>
-                <div className="Form-field"></div>
+                <select classname="Form-field" name="classificationList" id="classificationList" >
+                    <option value="freshman">Freshman</option>
+                    <option value="sophomore">Sophomore</option>
+                    <option value="junior">Junior</option>
+                    <option value="senior">Senior</option>
+                </select>
                 <p>User type (Student or Organization): </p>
-                <div className="Form-field"></div>
+                <select classname="Form-field" name="classificationList" id="classificationList" >
+                    <option value="student">Student</option>
+                    <option value="organization">Organization</option>
+                </select>
             </div>
-            <div className="Align-buttons" >
-                <div className="Right-outer-button">
-                    <button>
-                        <div className="Inner-button">
-                            <h4 className= "Text">Submit  </h4>
-                        </div>
-                    </button>
-                </div>
                 <div className="Outer-button">
-                <Link to="/homepage">
+                <Link to="/returnUserProfile">
                     <button>
                         <div className="Inner-button">
-                            <h4 className= "Text">Home Page</h4>
+                            <h4 className= "Text">Submit</h4>
                         </div>
                     </button>
                     </Link>
                 </div>
-            </div>
         </div>
     );
 }
