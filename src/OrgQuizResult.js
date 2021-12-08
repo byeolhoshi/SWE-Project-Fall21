@@ -1,5 +1,4 @@
 import './StudentQuizResult.css';
-import ACM from './ACM.png';
 import {Link } from 'react-router-dom';
 
 function OrgQuizResult() {
