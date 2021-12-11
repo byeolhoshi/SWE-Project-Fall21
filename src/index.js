@@ -12,7 +12,11 @@
   import { BrowserRouter, Routes, Route } from 'react-router-dom';
   import HomePage from './HomePage';
 
+<<<<<<< HEAD
   import { firebase } from './firebase-config.js';
+=======
+  //import { firebase } from './firebase-config.js';
+>>>>>>> 8b17061 (23 created signin.jsx, added routing to index.js)
   import { initializeApp } from 'firebase/app';
   import {
    getAuth,
@@ -21,8 +25,8 @@
    signInWithPopup,
    signOut,
  } from 'firebase/auth';
-/*  import {
-   getFirestore,
+   
+ import { getFirestore,
    collection,
    addDoc,
    query,
@@ -57,8 +61,11 @@
  import { getPerformance } from 'firebase/performance';
  
  import { getFirebaseConfig } from './firebase-config.js';
+<<<<<<< HEAD
  import SignIn from './signin';
  
+=======
+>>>>>>> 8b17061 (23 created signin.jsx, added routing to index.js)
  // Signs-in Friendly Chat.
  async function signIn() {
    // Sign in Firebase using popup auth and Google as the identity provider.
@@ -205,19 +212,35 @@
  
  const firebaseAppConfig = getFirebaseConfig();
  
- // TODO 12: Initialize Firebase Performance Monitoring
- ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/homepage" element={<HomePage />} />
-        <Route path="/" element={<NewUserProfile />} />
-        <Route path="/returnUserProfile" element={<ReturningUserProfile />} />
-      </Routes>
-  </BrowserRouter>
-  </React.StrictMode>,
+ if (isUserSignedIn()){
+   return (
+     ReactDOM.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/" element={<NewUserProfile />} />
+          <Route path="/returnUserProfile" element={<ReturningUserProfile />} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>,
   document.getElementById('root')
-);
+)
+   )
+ }else{
+   return(
+     <React.StrictMode>
+       <BrowserRouter>
+        <Router>
+          <Switch>
+            <Route path="/login" component ={SignIn}/>
+          </Switch>
+        </Router>
+       </BrowserRouter>
+     </React.StrictMode>
+   )
+ }
+ 
  reportWebVitals();
  initializeApp(firebaseAppConfig);
  initFirebaseAuth();
