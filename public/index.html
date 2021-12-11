@@ -3,26 +3,22 @@
 	<head>
 		<title>Bison: Meet The Herd</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
-
+		<script type="module" src="../src/signin.js"></script>
 	</head>
 	<body>
 		<div class="loginbox">
 			<h1>Login</h1>
 			<form>
-				<p>Username</p>
-				<input type="text" name="" placeholder="Enter Username">
-				<p>Password</p>
-				<input type="text" name="" placeholder="Enter Password">
-				<input type="submit" name="" value="Login">
 				<div id="google-signin"> 
-					<button id="google" onclick="SignIn">Login with Google -></button>
+					<button id="signInButton">Login with Google -></button>
 				</div>
-				<button id="createnew">Create a new account -></button>
 			</form>
 		</div>
-		<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
-  		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-		<script src="./src/signin.jsx"></script>
+		<script  src="https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js" type="module"></script>
+ 		<script  src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js" type="module"></script>
+ 		<script  src="https://www.gstatic.com/firebasejs/9.1.0/firebase-firestore.js" type="module"></script>
+ </body>
+
 	</body>
 	
 </html>
