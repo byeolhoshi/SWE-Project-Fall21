@@ -6,7 +6,7 @@
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "build": "echo 'build deploying'",
+    "build": "webpack",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
