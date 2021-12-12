@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
-import "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"; 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics.js";
+//import * as firebase from 'firebase/app'; 
+import { initializeApp } from '../node_modules/firebase/firebase-app.js';
+import { initializeAnalytics , getAnalytics } from '../node_modules/firebase/firebase-analytics.js';
+import { getFirestore, doc, getDoc } from '../node_modules/firebase/firebase-firestore-lite.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -20,6 +21,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const fb_app = initializeApp(firebaseConfig); // returns an app 
+initializeAnalytics(fb_app); 
 const analytics = getAnalytics(fb_app);
+
+async function loadCity(name) {
+  const cityDoc = doc(fb_app, `cities/${name}`);
+  const snapshot = await getDoc(cityDoc); 
+  return{
+    id: snapshot.id, 
+    data: snapshot.data(),
+  };
+}; 
+console.log(analytics); 
 //export {firebase};
 export {fb_app};

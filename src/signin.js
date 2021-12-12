@@ -32,7 +32,7 @@ signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    // ...
+
   }).catch((error) => {
     console.log(error)
     // Handle Errors here.
