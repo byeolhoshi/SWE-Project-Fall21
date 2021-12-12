@@ -31,9 +31,12 @@
     "@babel/runtime": "^7.16.3",
     "babel-loader": "^8.2.3",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "css-loader": "^6.5.1",
     "eslint": "^7.6.0",
     "eslint-config-google": "^0.14.0",
     "firebase-functions-test": "^0.2.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "style-loader": "^3.3.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
   },

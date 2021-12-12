@@ -21,12 +21,25 @@ module.exports = {
                       envName: isProduction ? "production" : "development"
                   }
               }
+          },
+          {
+              test: /\.css$/,
+              use: [
+                  isProduction ? MiniCssExtractPlugin.loader : "style-loader", "css-loader"
+              ]
           }
       ]
   }, 
   resolve: {
       extensions: [".js", ".jsx"]
   },
+  plugins: [
+      isProduction &&
+        new MiniCssExtractPlugin({
+            filename: "assets/css/[name].[contenthash:8].css"
+            chunkFilename: "assets/css/[name].[contenthash:8].chunk.css"
+        })
+  ].filter(Boolean),
   // Optional and for development only. This provides the ability to
   // map the built code back to the original source format when debugging.
   devtool: 'eval-source-map',
