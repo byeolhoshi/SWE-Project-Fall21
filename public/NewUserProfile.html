@@ -5,28 +5,29 @@
 
     </head>
     <body>
-        <div className= "Background">
-            <div className= "Header">
-                <h1 className= "Title">Profile</h1>
+        <div class= "Background">
+            <div class= "Header">
+                <h1 class= "Title">Profile</h1>
             </div>
-            <div className="Align-buttons">
-                <div className= "User-info">
-                    <h2 className= "Subtitle">Welcome back John Doe!</h2>
-                    <h3 className= "Text">Classification: Junior, Computer Science major</h3>
-                    <h3 className= "Text">Club match: ACM</h3>
+            <div id="outline">
+            <div class="Align-buttons">
+                <div class= "User-info">
+                    <h2 class= "Subtitle">Welcome back John Doe!</h2>
+                    <h3 class= "Text">Classification: Junior</h3>
+                    <h3 class= "Text">Club match: ACM</h3>
                 </div>
                 <Link to="/newUserProfile">
-                        <div className="Inner-button">
-                            <h4 className= "Text">Update Profile</h4>
+                        <div class="Inner-button">
+                            <button id="update">Update Profile</button>
                         </div>
                     </Link>
             </div>
-            <div className= "Org-info">
-                <img src={ACM} alt=""/> <h3 className= "Text">Association of Computing Machinery, Howard Chapter</h3> 
-                <h3 className= "Text">Contact Information:</h3>
-                <h3 className= "Text-link">acm@scs.howard.edu</h3>
+            <div class= "Org-info">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Association_for_Computing_Machinery_%28ACM%29_logo.svg/1024px-Association_for_Computing_Machinery_%28ACM%29_logo.svg.png" alt="" id="clubpic"/> <h3 class= "Text">Association of Computing Machinery, Howard Chapter</h3> 
+                <h3 class= "Text">Contact Information:</h3>
+                <h3 class= "Text-link">acm@scs.howard.edu</h3>
                 <h3><a
-                className="Text-link"
+                class="Text-link"
                 href="https://twitter.com/ACMHU"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -34,7 +35,7 @@
                 twitter.com/ACMHU
                 </a></h3>
                 <h3><a
-                className="Text-link"
+                class="Text-link"
                 href="https://www.instagram.com/acmhu/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -42,7 +43,7 @@
                 instagram.com/acmhu/
                 </a></h3>
                 <h3><a
-                className="Text-link"
+                class="Text-link"
                 href="https://web.groupme.com/join_group/54153253/amEHm3MR"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -50,15 +51,16 @@
                 web.groupme.com/join_group/54153253/amEHm3MR
                 </a></h3>
             </div>
-            <div className="Outer-button">
+            <div class="Outer-button">
             <Link to="/homepage">
                 <button onclick="window.location.href='HomePage.html';">
-                    <div className="Inner-button">
-                        <h4 className= "Text">Home Page</h4>
+                    <div class="Inner-button">
+                        <h4 class= "Text">Home Page</h4>
                     </div>
                 </button>
                 </Link>
             </div>
+        </div>
         </div>
     </body>
 </html>
