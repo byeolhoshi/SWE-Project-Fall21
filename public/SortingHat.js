@@ -5,7 +5,7 @@ function ListSorter(x, answers, clubAnswers, solutions){
 
 	for (let y =0; y < clubAnswers[0].length; y++)
 	{
-		if(answers[x][y]==clubAnswers[x][y])
+		if(answers[y]==clubAnswers[x][y])
 		{
 			temp++;
 
