@@ -256,7 +256,7 @@
         <input type = "submit" value="Submit Questionaire"/> 
             </form> 
     </body>
-       <script>
+         <script>
               function checkclicked(){
                      var answers_array = [];
                      var elements = document.getElementById('click');
@@ -267,11 +267,14 @@
                           'input[id="click"]:checked');
                           if (checkbox != null) {
                                    document.getElementById("click").innerHTML
+                                   answers_array[i] = 1; 
                             }
                           else{
                                    document.getElementById("click").innerHTML
+                                   answers_array[i] = 0; 
 
                             }
+               return answers_array            
                      
               };
        }
