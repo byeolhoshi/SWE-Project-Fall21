@@ -258,6 +258,7 @@
     </body>
        <script>
               function checkclicked(){
+                     var answers_array = [];
                      var elements = document.getElementById('click');
                      for (var i = 0, length = elements.length; i < length; i++) {
                           elements[i].onclick = function(event) {
@@ -265,7 +266,7 @@
                           var checkbox = document.querySelector(
                           'input[id="click"]:checked');
                           if (checkbox != null) {
-                                   document.getElementById("click").innerHTML 
+                                   document.getElementById("click").innerHTML
                             }
                           else{
                                    document.getElementById("click").innerHTML
