@@ -3,7 +3,7 @@ function ListSorter(x, answers, clubAnswers, solutions){
 	
 	let temp=0;
 
-	for (let y =0; y < grid[0].length; y++)
+	for (let y =0; y < clubAnswers[0].length; y++)
 	{
 		if(answers[x][y]==clubAnswers[x][y])
 		{
