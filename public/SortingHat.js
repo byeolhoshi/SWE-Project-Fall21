@@ -12,6 +12,7 @@ function ListSorter(x, answers, clubAnswers, solutions){
 		}
 	}
 	solutions[x]=temp;
+	return;
 }
 
 exports.findClub = function(answers, clubAnswers) {
